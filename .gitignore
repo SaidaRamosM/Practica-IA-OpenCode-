@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------------------
+# Credenciales. Nunca deben subirse al repositorio.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# Bibliotecas exportadas por la aplicacion: contienen datos del usuario.
+# El proyecto es de Python y no usa npm, asi que las dos exclusiones de
+# abajo son puramente defensivas para no romper una regla general por error.
+*.json
+!package.json
+!package-lock.json
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# ---------------------------------------------------------------------------
+# Herramientas
+# ---------------------------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Editores y SO
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,14 @@
+# Dependencias de desarrollo.
+#
+# NO son necesarias para ejecutar la aplicacion: `requirements.txt` es la lista
+# de lo que la app importa en tiempo de ejecucion (solo `requests`). Este
+# archivo esta separado a proposito, para que un despliegue no instale el
+# framework de pruebas.
+#
+#   python -m pip install -r requirements-dev.txt
+#
+# pytest-cov es opcional en el sentido de que los tests funcionan sin el; solo
+# añade `--cov`. Si no se instala, quita el plugin y el resto sigue igual.
+
+pytest>=9.1,<10
+pytest-cov>=7.1,<8

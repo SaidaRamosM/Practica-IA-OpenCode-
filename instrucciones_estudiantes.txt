@@ -1,0 +1,100 @@
+========================================
+INSTRUCCIONES PARA ESTUDIANTES
+========================================
+
+OBJETIVO:
+Refactorizar el proyecto "Peliculas y Series" y crear skills basados en el codigo.
+
+========================================
+PARTE 1: REFACTORIZACION
+========================================
+
+FASE 1: ANALISIS DEL CODIGO
+1. Identificar todas las variables globales en api_movies.py y main.py
+2. Mapear las dependencias entre modulos
+3. Identificar duplicacion de codigo
+4. Localizar los bare except: y manejo de errores deficiente
+5. Documentar los archvios *_config.py que no se usan
+
+FASE 2: REESTRUCTURACION BASICA
+1. Crear un modulo config.py que reemplace todos los *_config.py
+2. Crear un modulo constants.py para valores hardcodeados
+3. Eliminar wildcard imports (from api_movies import *)
+4. Reemplazar concatenacion de strings por f-strings
+5. Agregar type hints a todas las funciones
+
+FASE 3: SEPARACION DE RESPONSABILIDADES
+1. Separar api_movies.py en:
+   - api/omdb.py (logica OMDB)
+   - api/tvmaze.py (logica TVMaze)
+   - services/movie_service.py (servicio de peliculas)
+   - services/series_service.py (servicio de series)
+2. Separar main.py en:
+   - ui/menu.py (logica de menu)
+   - ui/display.py (logica de visualizacion)
+   - main.py (solo entrada)
+3. Crear models/movie.py y models/series.py
+
+FASE 4: MANEJO DE ERRORES
+1. Crear custom exceptions (exceptions/movie_not_found.py, etc)
+2. Reemplazar bare except por excepciones especificas
+3. Agregar logging con modulo logging
+4. Eliminar print() debugging
+
+FASE 5: SEGURIDAD
+1. Mover contraseñas a variables de entorno
+2. Eliminar datos hardcodeados sensibles
+3. Agregar validación de entrada
+
+FASE 6: TESTING
+1. Crear tests/ con pytest
+2. Tests unitarios para cada servicio
+3. Tests de integración para APIs
+
+========================================
+PARTE 2: CREAR SKILLS
+========================================
+
+Las skills deben estar en su respectivo archivo SKILL.md en la raiz del proyecto.
+
+El archivo SKILL.md contiene las instrucciones detalladas para crear
+los 3 skills requeridos:
+
+1. SKILL Refactoring - Eliminar malas practicas del codigo
+2. SKILL API Integration - Conectar a APIs REST robustamente
+3. SKILL Testing - Crear tests automaticos con pytest
+
+========================================
+PARTE 3: ENTREGABLES
+========================================
+
+1. Codigo refactorizado en un repositorio Git
+2. README actualizado con la nueva estructura
+3. Al menos 3 skills creados para opencode
+4. Tests con al menos 80% de coverage
+5. Documentacion de las mejoras realizadas
+
+========================================
+EVALUACION
+========================================
+
+Criterios:
+- Eliminacion de variables globales (20%)
+- Separacion de responsabilidades (20%)
+- Manejo de errores (15%)
+- Tests unitarios (15%)
+- Skills creados (15%)
+- Documentacion (15%)
+
+========================================
+RECURSOS
+========================================
+
+- Python: https://docs.python.org/3/
+- Pytest: https://docs.pytest.org/
+- Opencode docs: https://opencode.ai
+- SOLID principles: https://en.wikipedia.org/wiki/SOLID
+
+========================================
+PLAZO: 2 semanas
+========================================
